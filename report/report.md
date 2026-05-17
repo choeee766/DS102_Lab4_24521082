@@ -57,10 +57,13 @@ Mô hình `DTClassifier` được xây dựng dựa trên tiêu chí **Entropy**
 2. **Thử ngưỡng (Threshold):** Trích xuất các giá trị độc nhất (`np.unique`) của từng đặc trưng số để làm các điểm cắt tiềm năng.
 3. **Tính toán Information Gain:** Áp dụng công thức Entropy và độ lợi thông tin tại nút cha so với các nút con:
 
-$$H(y) = -\sum p_i \log_2(p_i)$$
+<div align="center">
+  <img src="https://latex.codecogs.com/svg.image?H(y)&space;=&space;-\sum&space;p_i&space;\log_2(p_i)" title="H(y) = -\sum p_i \log_2(p_i)" />
+</div>
 
-
-$$IG = H(\text{parent}) - \left[ \frac{n_{\text{left}}}{n} H(\text{left}) + \frac{n_{\text{right}}}{n} H(\text{right}) \right]$$
+<div align="center">
+  <img src="https://latex.codecogs.com/svg.image?IG&space;=&space;H(\text{parent})&space;-&space;\left[&space;\frac{n_{\text{left}}}{n}&space;H(\text{left})&space;&plus;&space;\frac{n_{\text{right}}}{n}&space;H(\text{right})&space;\right]" title="IG = H(\text{parent}) - \left[ \frac{n_{\text{left}}}{n} H(\text{left}) + \frac{n_{\text{right}}}{n} H(\text{right}) \right]" />
+</div>
 
 
 4. **Tối ưu hóa:** Chọn cặp (Feature, Threshold) mang lại chỉ số **Information Gain (IG)** lớn nhất để tiến hành cắt nhánh.
